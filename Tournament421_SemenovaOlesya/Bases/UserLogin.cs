@@ -12,14 +12,13 @@ namespace Tournament421_SemenovaOlesya.Bases
     using System;
     using System.Collections.Generic;
     
-    public partial class Moderator
+    public partial class UserLogin
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string ContactInfo { get; set; }
-        public int RoleId { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
     
-        public virtual Role Role { get; set; }
-        public virtual UserLogin UserLogin { get; set; }
+        public virtual Moderator Moderator { get; set; }
+        public virtual Player Player { get; set; }
     }
 }

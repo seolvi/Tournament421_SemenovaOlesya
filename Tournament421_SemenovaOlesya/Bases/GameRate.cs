@@ -12,11 +12,15 @@ namespace Tournament421_SemenovaOlesya.Bases
     using System;
     using System.Collections.Generic;
     
-    public partial class Organizer
+    public partial class GameRate
     {
-        public int id { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
-        public string Name { get; set; }
+        public int Id { get; set; }
+        public int IdPlayer { get; set; }
+        public int IdGame { get; set; }
+        public int Rating { get; set; }
+        public string Description { get; set; }
+    
+        public virtual Game Game { get; set; }
+        public virtual Player Player { get; set; }
     }
 }

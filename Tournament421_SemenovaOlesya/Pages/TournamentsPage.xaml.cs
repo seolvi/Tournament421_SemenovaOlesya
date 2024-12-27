@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Tournament421_SemenovaOlesya.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для PlayerNavigPage.xaml
+    /// Логика взаимодействия для TournamentsPage.xaml
     /// </summary>
-    public partial class PlayerNavigPage : Page
+    public partial class TournamentsPage : Page
     {
-        public PlayerNavigPage()
+        public TournamentsPage()
         {
             InitializeComponent();
         }

@@ -4,17 +4,40 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="fc3413b969ec410e90ed4593f23512c9" Name="Diagram1">
-        <EntityTypeShape EntityType="TournamentDB_421_SemenovaModel.Game" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TournamentDB_421_SemenovaModel.Moderator" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TournamentDB_421_SemenovaModel.Organizer" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TournamentDB_421_SemenovaModel.Player" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TournamentDB_421_SemenovaModel.Player_role" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TournamentDB_421_SemenovaModel.Team" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TournamentDB_421_SemenovaModel.Tournament" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="TournamentDB_421_SemenovaModel.Tournament_type" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
-        <AssociationConnector Association="TournamentDB_421_SemenovaModel.FK_Tournament_Game" ManuallyRouted="false" />
-        <AssociationConnector Association="TournamentDB_421_SemenovaModel.FK_Tournament_Tournament_type" ManuallyRouted="false" />
+      <Diagram DiagramId="9ac03d8ec7de433eb99879f2ecb8b132" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="TournamentDB_421_OlesyaModel.Game" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_OlesyaModel.GameRate" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_OlesyaModel.Match" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_OlesyaModel.Moderator" Width="1.5" PointX="14.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_OlesyaModel.Player" Width="1.5" PointX="11.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_OlesyaModel.PlayerOfTeam" Width="1.5" PointX="12.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_OlesyaModel.Request" Width="1.5" PointX="8.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_OlesyaModel.RequestMatch" Width="1.5" PointX="10.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_OlesyaModel.RequestPlayer" Width="1.5" PointX="13.5" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_OlesyaModel.Role" Width="1.5" PointX="12" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_OlesyaModel.State" Width="1.5" PointX="3.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_OlesyaModel.Team" Width="1.5" PointX="10.5" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_OlesyaModel.TeamRole" Width="1.5" PointX="10.5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_OlesyaModel.Tournament" Width="1.5" PointX="6" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_OlesyaModel.Type" Width="1.5" PointX="3.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TournamentDB_421_OlesyaModel.UserLogin" Width="1.5" PointX="9" PointY="1.625" IsExpanded="true" />
+        <AssociationConnector Association="TournamentDB_421_OlesyaModel.FK_GameRate_Game" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_OlesyaModel.FK_Tournament_Game" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_OlesyaModel.FK_GameRate_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_OlesyaModel.FK_Match_Tournament" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_OlesyaModel.FK_RequestMatch_Match" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_OlesyaModel.FK_Moderator_Access" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_OlesyaModel.FK_Moderator_UserLogin" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_OlesyaModel.FK_MatchPlayer_Player" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_OlesyaModel.FK_Player_UserLogin" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_OlesyaModel.FK_PlayerOfTeam_Team" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_OlesyaModel.FK_PlayerOfTeam_TeamRole" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_OlesyaModel.FK_Request_Tournament" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_OlesyaModel.FK_RequestMatch_Request" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_OlesyaModel.FK_RequestPlayer_Request" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_OlesyaModel.FK_Team_Request" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_OlesyaModel.FK_Tournament_State" ManuallyRouted="false" />
+        <AssociationConnector Association="TournamentDB_421_OlesyaModel.FK_Tournament_Type" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

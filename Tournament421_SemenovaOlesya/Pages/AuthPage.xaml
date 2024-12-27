@@ -7,21 +7,21 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AuthPage">
-
-    <Grid Background="White">
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="0 -100 0 0">
-            <TextBlock FontSize="40" HorizontalAlignment="Center" Margin="0 0 0 30" >Авторизация</TextBlock>
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 -30 0 0">
+            <TextBlock Text="Авторизация" FontSize="30" HorizontalAlignment="Center" FontWeight="Bold" Margin="0 0 0 30"></TextBlock>
             <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
-                <TextBlock Margin="0 0 5 0" Width="50">Логин</TextBlock>
-                <TextBox x:Name="LogTB"  Width="200"/>
+                <TextBlock Width="50">Логин</TextBlock>
+                <TextBox Width="200" x:Name="LoginTb"></TextBox>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
-                <TextBlock Margin="0 0 5 0" Width="50">Пароль</TextBlock>
-                <PasswordBox x:Name="PassTB" Width="200"></PasswordBox>
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+                <TextBlock Width="50">Пароль</TextBlock>
+                <PasswordBox Width="200" x:Name="PasswordPb"></PasswordBox>
             </StackPanel>
-            <!--<CheckBox Name="RememberCb" Content="Запомнить аккаунт для входа" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,10"/>-->
-            <Button x:Name="AuthBTN" Margin="0 0 0 10"  Height="25" Click="AuthBTN_Click">Вход</Button>
-            <TextBlock HorizontalAlignment="Center">—— Нет аккаунта? <Hyperlink Foreground="#FF050505" x:Name="RegHyperlink" Click="RegHyperlink_Click" >Зарегистрироваться</Hyperlink> ——</TextBlock>
+            <Button x:Name="EnterBtn" Margin="0 0 0 5" Click="EnterBtn_Click">Войти</Button>
+            <TextBlock HorizontalAlignment="Center">*Если Вы новый участник <Hyperlink x:Name="RegLink" Click="RegLink_Click">Зарегистрироваться</Hyperlink> -</TextBlock>
         </StackPanel>
+
+        <Button Width="100" x:Name="TournirsBtn" Margin="20" HorizontalAlignment="Left" VerticalAlignment="Top" Click="TournirsBtn_Click">Турниры</Button>
     </Grid>
 </Page>

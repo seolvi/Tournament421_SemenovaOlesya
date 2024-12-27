@@ -12,18 +12,24 @@ namespace Tournament421_SemenovaOlesya.Bases
     using System;
     using System.Collections.Generic;
     
-    public partial class Tournament_type
+    public partial class Request
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Tournament_type()
+        public Request()
         {
-            this.Tournament = new HashSet<Tournament>();
+            this.RequestMatch = new HashSet<RequestMatch>();
         }
     
-        public int id { get; set; }
-        public string Name { get; set; }
+        public int Id { get; set; }
+        public Nullable<bool> isAccepted { get; set; }
+        public System.DateTime DateTimeRequest { get; set; }
+        public int IdTournament { get; set; }
+        public bool Status { get; set; }
     
+        public virtual Tournament Tournament { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tournament> Tournament { get; set; }
+        public virtual ICollection<RequestMatch> RequestMatch { get; set; }
+        public virtual RequestPlayer RequestPlayer { get; set; }
+        public virtual Team Team { get; set; }
     }
 }

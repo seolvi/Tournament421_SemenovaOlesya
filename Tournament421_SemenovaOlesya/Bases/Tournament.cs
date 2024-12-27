@@ -14,15 +14,30 @@ namespace Tournament421_SemenovaOlesya.Bases
     
     public partial class Tournament
     {
-        public int id { get; set; }
-        public string Name { get; set; }
-        public Nullable<System.DateTime> Start_date { get; set; }
-        public Nullable<System.DateTime> End_date { get; set; }
-        public Nullable<int> Type_id { get; set; }
-        public Nullable<int> Game_id { get; set; }
-        public Nullable<int> Prize_fund { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Tournament()
+        {
+            this.Match = new HashSet<Match>();
+            this.Request = new HashSet<Request>();
+        }
+    
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public int TypeId { get; set; }
+        public System.DateTime DatetimeTournament { get; set; }
+        public int PrizePool { get; set; }
+        public int StateId { get; set; }
+        public int IdGame { get; set; }
+        public Nullable<int> MinRating { get; set; }
+        public string Description { get; set; }
+        public Nullable<int> CountPlayer { get; set; }
     
         public virtual Game Game { get; set; }
-        public virtual Tournament_type Tournament_type { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Match> Match { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Request> Request { get; set; }
+        public virtual State State { get; set; }
+        public virtual Type Type { get; set; }
     }
 }

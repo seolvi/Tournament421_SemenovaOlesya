@@ -14,7 +14,17 @@ namespace Tournament421_SemenovaOlesya.Bases
     
     public partial class Team
     {
-        public int id { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Team()
+        {
+            this.PlayerOfTeam = new HashSet<PlayerOfTeam>();
+        }
+    
+        public int Id { get; set; }
         public string Name { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PlayerOfTeam> PlayerOfTeam { get; set; }
+        public virtual Request Request { get; set; }
     }
 }

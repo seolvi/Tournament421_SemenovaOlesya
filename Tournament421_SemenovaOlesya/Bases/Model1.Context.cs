@@ -13,10 +13,10 @@ namespace Tournament421_SemenovaOlesya.Bases
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TournamentDB_421_SemenovaEntities : DbContext
+    public partial class TournamentDB_421_OlesyaEntities : DbContext
     {
-        public TournamentDB_421_SemenovaEntities()
-            : base("name=TournamentDB_421_SemenovaEntities")
+        public TournamentDB_421_OlesyaEntities()
+            : base("name=TournamentDB_421_OlesyaEntities")
         {
         }
     
@@ -26,12 +26,20 @@ namespace Tournament421_SemenovaOlesya.Bases
         }
     
         public virtual DbSet<Game> Game { get; set; }
+        public virtual DbSet<GameRate> GameRate { get; set; }
+        public virtual DbSet<Match> Match { get; set; }
         public virtual DbSet<Moderator> Moderator { get; set; }
-        public virtual DbSet<Organizer> Organizer { get; set; }
         public virtual DbSet<Player> Player { get; set; }
-        public virtual DbSet<Player_role> Player_role { get; set; }
+        public virtual DbSet<PlayerOfTeam> PlayerOfTeam { get; set; }
+        public virtual DbSet<Request> Request { get; set; }
+        public virtual DbSet<RequestMatch> RequestMatch { get; set; }
+        public virtual DbSet<RequestPlayer> RequestPlayer { get; set; }
+        public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<State> State { get; set; }
         public virtual DbSet<Team> Team { get; set; }
+        public virtual DbSet<TeamRole> TeamRole { get; set; }
         public virtual DbSet<Tournament> Tournament { get; set; }
-        public virtual DbSet<Tournament_type> Tournament_type { get; set; }
+        public virtual DbSet<Type> Type { get; set; }
+        public virtual DbSet<UserLogin> UserLogin { get; set; }
     }
 }

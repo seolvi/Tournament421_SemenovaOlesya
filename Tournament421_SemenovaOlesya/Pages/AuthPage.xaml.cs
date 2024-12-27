@@ -25,26 +25,20 @@ namespace Tournament421_SemenovaOlesya.Pages
             InitializeComponent();
         }
 
-        private void AuthBTN_Click(object sender, RoutedEventArgs e)
+        private void EnterBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(LogTB.Text) || string.IsNullOrEmpty(PassTB.Password))
+            var user = App.db.UserLogin.FirstOrDefault(x =>
+                x.Login.Equals(LoginTb.Text) &&
+                x.Password.Equals(PasswordPb.Password));
+            if (user == null)
             {
-                MessageBox.Show("Заполните все данные");
+                Methods.TakeWarning("Неверный логин или пароль!");
                 return;
             }
-            var user = App.db.Player.FirstOrDefault(x => x.Login == LogTB.Text || x.Password == PassTB.Password);
 
-            if (user != null)
-            {
-                MessageBox.Show("Добро пожаловать, " + user.Nickname);
-                App.totalPlayer = user;
-                App.totalOrganizer = null;
-                NavigationService.Navigate(new PlayerNavigPage());
-
-            }
-            else MessageBox.Show("Пользователь не найден, проверь данные");
+            App.CurrentUser = user;
+            Navigations.Next(new TournirsPage());
+            Methods.TakeInformation("Вы успешно вошли в систему!");
         }
-
     }
 }
-
