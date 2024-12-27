@@ -12,14 +12,10 @@ namespace Tournament421_SemenovaOlesya.Bases
     using System;
     using System.Collections.Generic;
     
-    public partial class MatchResults
+    public partial class Moderator
     {
-        public int ResultID { get; set; }
-        public Nullable<int> MatchID { get; set; }
-        public string Score { get; set; }
-        public Nullable<int> Kills { get; set; }
-        public Nullable<System.TimeSpan> GameTime { get; set; }
-    
-        public virtual MatchSchedule MatchSchedule { get; set; }
+        public int id { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
     }
 }

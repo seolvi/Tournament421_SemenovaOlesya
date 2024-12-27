@@ -27,33 +27,24 @@ namespace Tournament421_SemenovaOlesya.Pages
 
         private void AuthBTN_Click(object sender, RoutedEventArgs e)
         {
-            string login = PhoneAuthTB.Text;
-            if (PasswordAuthTB.Password == "")
+            if (string.IsNullOrEmpty(LogTB.Text) || string.IsNullOrEmpty(PassTB.Password))
             {
-                MessageBox.Show("Вы не ввели пароль");
+                MessageBox.Show("Заполните все данные");
                 return;
             }
-            var loginUser = App.db.LoginUser.FirstOrDefault(x => x.Login == login && x.Password == PasswordAuthTB.Password);
+            var user = App.db.Player.FirstOrDefault(x => x.Login == LogTB.Text || x.Password == PassTB.Password);
 
-            if (loginUser != null)
+            if (user != null)
             {
-                App.currentUser = loginUser.User;
-                if (RememberCb.IsChecked == true)
-                    File.WriteAllText(@"RememberMe.txt", loginUser.Login);
-                MessageBox.Show($"Добро пожаловать, {loginUser.User.Name}!");
-                if (App.currentUser.IdRole == 1)
-                    App.mainWindow.SetElements(false, true, true, true, true, false, true);
-                else if (App.currentUser.IdRole == 2)
-                    App.mainWindow.SetElements(false, true, true, true, false, true, true);
-                else if (App.currentUser.IdRole == 3)
-                    App.mainWindow.SetElements(false, true, true, true, false, false, true);
-
-                NavigationService.Navigate(new ListPage());
+                MessageBox.Show("Добро пожаловать, " + user.Nickname);
+                App.totalPlayer = user;
+                App.totalOrganizer = null;
+                NavigationService.Navigate(new PlayerNavigPage());
 
             }
-            else
-                MessageBox.Show("Пользователь не найден. Попробуйте ещё раз!");
+            else MessageBox.Show("Пользователь не найден, проверь данные");
         }
-    }
+
     }
 }
+

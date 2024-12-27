@@ -13,10 +13,10 @@ namespace Tournament421_SemenovaOlesya.Bases
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TournamentDB_421_SemenovaOlesyaEntities : DbContext
+    public partial class TournamentDB_421_SemenovaEntities : DbContext
     {
-        public TournamentDB_421_SemenovaOlesyaEntities()
-            : base("name=TournamentDB_421_SemenovaOlesyaEntities")
+        public TournamentDB_421_SemenovaEntities()
+            : base("name=TournamentDB_421_SemenovaEntities")
         {
         }
     
@@ -25,17 +25,13 @@ namespace Tournament421_SemenovaOlesya.Bases
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ApplicationStatus> ApplicationStatus { get; set; }
-        public virtual DbSet<MatchResults> MatchResults { get; set; }
-        public virtual DbSet<MatchSchedule> MatchSchedule { get; set; }
-        public virtual DbSet<Players> Players { get; set; }
-        public virtual DbSet<PlayerStats> PlayerStats { get; set; }
-        public virtual DbSet<Rankings> Rankings { get; set; }
-        public virtual DbSet<Records> Records { get; set; }
-        public virtual DbSet<Reports> Reports { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<Teams> Teams { get; set; }
-        public virtual DbSet<TournamentApplications> TournamentApplications { get; set; }
-        public virtual DbSet<Tournaments> Tournaments { get; set; }
+        public virtual DbSet<Game> Game { get; set; }
+        public virtual DbSet<Moderator> Moderator { get; set; }
+        public virtual DbSet<Organizer> Organizer { get; set; }
+        public virtual DbSet<Player> Player { get; set; }
+        public virtual DbSet<Player_role> Player_role { get; set; }
+        public virtual DbSet<Team> Team { get; set; }
+        public virtual DbSet<Tournament> Tournament { get; set; }
+        public virtual DbSet<Tournament_type> Tournament_type { get; set; }
     }
 }

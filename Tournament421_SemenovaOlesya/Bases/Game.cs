@@ -12,12 +12,18 @@ namespace Tournament421_SemenovaOlesya.Bases
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class Game
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Game()
+        {
+            this.Tournament = new HashSet<Tournament>();
+        }
+    
+        public int id { get; set; }
+        public string Name { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Tournament> Tournament { get; set; }
     }
 }

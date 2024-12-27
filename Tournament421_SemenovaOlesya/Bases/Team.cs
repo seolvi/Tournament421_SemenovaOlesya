@@ -12,16 +12,9 @@ namespace Tournament421_SemenovaOlesya.Bases
     using System;
     using System.Collections.Generic;
     
-    public partial class Rankings
+    public partial class Team
     {
-        public int RankingID { get; set; }
-        public Nullable<int> ParticipantID { get; set; }
-        public Nullable<int> TeamID { get; set; }
-        public Nullable<int> TournamentID { get; set; }
-        public Nullable<int> Rank { get; set; }
-    
-        public virtual Players Players { get; set; }
-        public virtual Teams Teams { get; set; }
-        public virtual Tournaments Tournaments { get; set; }
+        public int id { get; set; }
+        public string Name { get; set; }
     }
 }

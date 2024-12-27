@@ -13,11 +13,11 @@
             <TextBlock FontSize="40" HorizontalAlignment="Center" Margin="0 0 0 30" >Авторизация</TextBlock>
             <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
                 <TextBlock Margin="0 0 5 0" Width="50">Логин</TextBlock>
-                <TextBox x:Name="PhoneAuthTB"  Width="200"/>
+                <TextBox x:Name="LogTB"  Width="200"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
                 <TextBlock Margin="0 0 5 0" Width="50">Пароль</TextBlock>
-                <PasswordBox x:Name="PasswordAuthTB" Width="200"></PasswordBox>
+                <PasswordBox x:Name="PassTB" Width="200"></PasswordBox>
             </StackPanel>
             <!--<CheckBox Name="RememberCb" Content="Запомнить аккаунт для входа" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,10"/>-->
             <Button x:Name="AuthBTN" Margin="0 0 0 10"  Height="25" Click="AuthBTN_Click">Вход</Button>

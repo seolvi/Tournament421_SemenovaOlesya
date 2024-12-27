@@ -12,11 +12,13 @@ namespace Tournament421_SemenovaOlesya.Bases
     using System;
     using System.Collections.Generic;
     
-    public partial class Reports
+    public partial class Player
     {
-        public int ReportID { get; set; }
-        public string ReportType { get; set; }
-        public Nullable<System.DateTime> ReportDate { get; set; }
-        public string Description { get; set; }
+        public int id { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
+        public string Nickname { get; set; }
+        public string Name { get; set; }
+        public string Phone_number { get; set; }
     }
 }

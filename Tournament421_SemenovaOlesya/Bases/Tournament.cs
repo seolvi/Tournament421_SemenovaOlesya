@@ -12,16 +12,17 @@ namespace Tournament421_SemenovaOlesya.Bases
     using System;
     using System.Collections.Generic;
     
-    public partial class PlayerStats
+    public partial class Tournament
     {
-        public int StatID { get; set; }
-        public Nullable<int> ParticipantID { get; set; }
-        public Nullable<int> MatchesPlayed { get; set; }
-        public Nullable<int> Wins { get; set; }
-        public Nullable<int> Losses { get; set; }
-        public Nullable<int> TournamentPosition { get; set; }
-        public string Achievements { get; set; }
+        public int id { get; set; }
+        public string Name { get; set; }
+        public Nullable<System.DateTime> Start_date { get; set; }
+        public Nullable<System.DateTime> End_date { get; set; }
+        public Nullable<int> Type_id { get; set; }
+        public Nullable<int> Game_id { get; set; }
+        public Nullable<int> Prize_fund { get; set; }
     
-        public virtual Players Players { get; set; }
+        public virtual Game Game { get; set; }
+        public virtual Tournament_type Tournament_type { get; set; }
     }
 }

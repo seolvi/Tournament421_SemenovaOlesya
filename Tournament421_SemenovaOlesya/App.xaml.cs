@@ -15,8 +15,9 @@ namespace Tournament421_SemenovaOlesya
     /// </summary>
     public partial class App : Application
     {
-        public static TournamentDB_421_SemenovaOlesyaEntities db = new TournamentDB_421_SemenovaOlesyaEntities();
+        public static TournamentDB_421_SemenovaEntities db = new TournamentDB_421_SemenovaEntities();
 
-        public static User currentUser;
+        public static Player totalPlayer;
+        public static Organizer totalOrganizer;
     }
 }
